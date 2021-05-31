@@ -3,7 +3,7 @@
 <head>
 	<style>
 		.fav_movies td {
-			color: orange;
+			color: black;
 		}
 	</style>
 	<script type="text/javascript">
@@ -20,19 +20,18 @@
 			};
 
 			xmlhttp.open("GET", "/movies", true);
-			// xmlhttp.setRequestHeader("Content-type", "apptdcation/x-www-form-urlencoded");
 			xmlhttp.send();
 
 		}
 
-		function formatirajJsonHtml(jsonMovies) {
+		function formatirajJsonHtml(jsonMoviesList) {
 			var htmlZaPrikazati = '<table align="left" border="1" cellpadding="0" cellspacing="4" class="fav_movies">' 
 										+ "<th>Title </th>"
 										+ "<th>Year </th>"
 										+ "<th>Genre </th>"
 										+ "<th>IMDb rating </th>";
 		    
-			jsonMovies.forEach((movie, index) => {
+			jsonMoviesList.forEach((movie, index) => {
 
 				htmlZaPrikazati += "<tr><td>" + movie.name + "</td><td>" + movie.year 
 		      + "</td><td>" + movie.genre + "</td><td>" +  movie.rating + "</td></tr>";	

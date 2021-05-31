@@ -10,8 +10,10 @@ def index():
 
 @app.route('/movies')
 def movies():
-    movieList = [{'name': 'Analyze This', 'year': 1999, 'genre': 'Comedy', 'rating':'6.7/10'}, {'name': 'Analyze This', 'year': 1999, 'genre': 'Comedy', 'rating':'*'}];
-    return json.dumps(movieList)
+    with open('movieList.json') as movieListJsonFile:
+        movieListObject = json.load(movieListJsonFile)
+        # movieList = [{'name': 'Analyze This', 'year': 1999, 'genre': 'Comedy', 'rating':'6.7/10'}, {'name': 'Analyze This', 'year': 1999, 'genre': 'Comedy', 'rating':'*'}];
+        return json.dumps(movieListObject)
 
 @app.route('/favicon.ico')
 def favicon():

@@ -1,0 +1,33 @@
+[
+	{
+	"name": "Analyze This",
+	"year": 1999,
+	"genre": "Comedy",
+	"rating": "6.7/10"
+}, 
+{
+	"name": "American History X",
+	"year": 1998,
+	"genre": "Crime",
+	"rating": "8.5/10"
+},
+{
+	"name": "Chasing Amy",
+	"year": 1997,
+	"genre": "Drama",
+	"rating": "7.2/10"
+},
+{
+	"name": "Don't Breathe",
+	"year": 2016,
+	"genre": "Horror",
+	"rating": "7.1/10"
+},
+{
+	"name": "Interstellar",
+	"year": 2014,
+	"genre": "Sci-Fi",
+	"rating": "8.6/10"
+}
+
+]
