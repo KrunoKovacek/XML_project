@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.fav_movies td {
+			color: orange;
+		}
+	</style>
+	<script type="text/javascript">
+		function dohvatiFilmove() {
+			console.log("Dohvacam...");
+
+			var movietdst = '[{"name": "Analyze This", "year": 1999, "genre": "Comedy", "rating":"6.7/10"}, {"name": "Analyze This", "year": 1999, "genre": "Comedy", "rating":"*"}]';
+			var movieListObject = JSON.parse(movietdst);
+			var htmlZaPrikazati = '<table align="left" border="1" cellpadding="0" cellspacing="4" class="fav_movies">' 
+										+ "<th>Title </th>"
+										+ "<th>Year </th>"
+										+ "<th>Genre </th>"
+										+ "<th>IMDb rating </th>";
+		    
+			movieListObject.forEach((movie, index) => {
+
+				htmlZaPrikazati += "<tr><td>" + movie.name + "</td><td>" + movie.year 
+		      + "</td><td>" + movie.genre + "</td><td>" +  movie.rating + "</td></tr>";	
+			})
+
+		    htmlZaPrikazati += "</table>";
+
+			document.getElementById("fav_movies").innerHTML = htmlZaPrikazati;
+
+			// var obj, dbParam, xmlhttp, myObj, x, txt = "";
+			// obj = { table: "customers", tdmit: 20 };
+			// dbParam = JSON.stringify(obj);
+			// xmlhttp = new XMLHttpRequest();
+			// xmlhttp.onreadystatechange = function() {
+			//   if (this.readyState == 4 && this.status == 200) {
+			//     myObj = JSON.parse(this.responseText);
+			//     txt += "<table border='1'>"
+			//     for (x in myObj) {
+			//       txt += "<tr><td>" + myObj[x].name + "</td></tr>";
+			//     }
+			//     txt += "</table>"    
+			//     document.getElementById("demo").innerHTML = txt;
+			//   }
+			// };
+			// xmlhttp.open("POST", "json_demo_html_table.php", true);
+			// xmlhttp.setRequestHeader("Content-type", "apptdcation/x-www-form-urlencoded");
+			// xmlhttp.send("x=" + dbParam);
+				}
+	</script>
+</head>
+
+<body>
+
+<h2>Favourite movies:</h2>
+
+
+<button onclick="dohvatiFilmove()">Dohvati filmove</button>
+<p id="fav_movies"></p>
+
+
+
+</body>
+</html>
